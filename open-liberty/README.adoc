@@ -1,0 +1,17 @@
+== Usage
+
+Example Dockerfile:
+
+----
+FROM sdaschner/open-liberty:javaee7-jdk8-b1
+
+COPY my-application.war $DEPLOYMENT_DIR
+----
+
+== Variables
+
+The following environment variables can be used in the Dockerfile:
+
+- `$DEPLOYMENT_DIR`, the auto-deployment directory, place your WAR file here.
+- `$CONFIG_DIR`, the configuration directory, place your `server.xml` file here.
+- `$INSTALL_DIR`, the server installation directory.
