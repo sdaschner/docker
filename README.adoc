@@ -13,6 +13,9 @@ Besides the idea to have a repository where to share Docker images used in my pr
 - graceful shutdown and proper handling of Unix signals (`SIGTERM`)
 - build configuration via environment variables, e.g. `$DEPLOYMENT_DIR` for application servers
 
+This repository is by no means be an exhaustive repository, not even for modern Java EE application servers.
+In many occasions I use the (de-facto) official images, such as `jboss/wildfly`.
+
 == Contribution
 
 Feedback, issues, and PRs welcome!
