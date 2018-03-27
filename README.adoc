@@ -2,7 +2,7 @@
 
 == Usage
 
-All images are distributed on Docker Hub, by user `sdaschner`.
+All images are distributed on https://hub.docker.com/r/sdaschner/[Docker Hub^], by user `sdaschner`.
 
 The Docker tags of all images are unique and reliable, i.e. they won't change _ever_. You can rely upon builds being based on a particular image and tag, e.g. `sdaschner/open-liberty:javaee7-jdk8-b1`, to always produce the same outcome.
 
