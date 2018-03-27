@@ -4,7 +4,7 @@
 
 All images are distributed on Docker Hub, by user `sdaschner`.
 
-The Docker tags of all images are unique and reliable, i.e. they won't change _ever_. You can rely upon builds being based on a particular image and tag, e.g. `sdaschner/open-liberty:18.0.0.1-jdk8-b123`, to always produce the same outcome.
+The Docker tags of all images are unique and reliable, i.e. they won't change _ever_. You can rely upon builds being based on a particular image and tag, e.g. `sdaschner/open-liberty:javaee7-jdk8-b1`, to always produce the same outcome.
 
 == Concept
 
