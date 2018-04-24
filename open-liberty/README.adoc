@@ -15,3 +15,9 @@ The following environment variables can be used in the Dockerfile:
 - `$DEPLOYMENT_DIR`, the auto-deployment directory, place your WAR file here.
 - `$CONFIG_DIR`, the configuration directory, place your `server.xml` file here.
 - `$INSTALL_DIR`, the server installation directory.
+
+== Tags
+
+- `sdaschner/open-liberty:javaee7-jdk8-b<build>`, Java EE 7 with JDK 8
+- `sdaschner/open-liberty:javaee8-jdk8-tracing-b<build>`, Java EE 8 with JDK 9 and MP OpenTracing, including the required Liberty Zipkin implementation
+- `sdaschner/open-liberty:javaee8-jdk9-b<build>`, Java EE 8 with JDK 9
