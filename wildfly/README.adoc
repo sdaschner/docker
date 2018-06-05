@@ -1,0 +1,22 @@
+== Usage
+
+Example Dockerfile:
+
+----
+FROM sdaschner/wildfly:javaee8-b1
+
+COPY my-application.war $DEPLOYMENT_DIR
+----
+
+== Variables
+
+The following environment variables can be used in the Dockerfile:
+
+- `$DEPLOYMENT_DIR`, the auto-deployment directory, place your WAR file here.
+- `$CONFIG_DIR`, the configuration directory, place your `standalone.xml` file here.
+- `$INSTALL_DIR`, the server installation directory.
+
+== Tags
+
+- `sdaschner/wildfly:javaee8-b<build>`, Java EE 8 with WildFly 13.0.0.Final
+- `sdaschner/wildfly:javaee8-kafka-b<build>`, Java EE 7 with WildFly 13.0.0.Final and Kafka Clients lib
