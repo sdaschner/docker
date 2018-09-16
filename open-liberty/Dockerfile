@@ -1,8 +1,8 @@
 FROM java:8u111-jdk
 LABEL maintainer="Sebastian Daschner"
 
-ENV RELEASE 2018-04-29_0644
-ENV VERSION 20180429-0501
+ENV RELEASE 2018-09-11_0430
+ENV VERSION 18.0.0.3-20180911-0300
 
 RUN wget https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/nightly/${RELEASE}/openliberty-all-${VERSION}.zip \
     && unzip openliberty-all-${VERSION}.zip -d /opt \

@@ -1,4 +1,4 @@
-FROM sdaschner/open-liberty:javaee8-jdk8-b1
+FROM sdaschner/open-liberty:javaee8-jdk8-b4
 
 # from https://github.com/WASdev/sample.opentracing.zipkintracer
 COPY liberty-opentracing-zipkintracer-1.0-sample.zip /
