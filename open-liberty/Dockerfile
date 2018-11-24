@@ -1,14 +1,12 @@
-FROM openjdk:11.0.1-jdk-slim-sid
+FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
 LABEL maintainer="Sebastian Daschner"
 
-ENV RELEASE 2018-11-04_2212
-ENV VERSION 18.0.0.4-20181104-2100
+ENV RELEASE 2018-11-23_2217
+ENV VERSION 18.0.0.4-20181123-2100
 
-RUN apt-get update && apt-get install -y wget
-
-RUN wget https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/nightly/${RELEASE}/openliberty-all-${VERSION}.zip \
-    && unzip openliberty-all-${VERSION}.zip -d /opt \
-    && rm openliberty-all-${VERSION}.zip
+RUN curl https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/nightly/${RELEASE}/openliberty-all-${VERSION}.zip -L -o openliberty.zip \
+    && unzip openliberty.zip -d /opt \
+    && rm openliberty.zip
 
 ENV INSTALL_DIR /opt/wlp/
 ENV CONFIG_DIR /opt/wlp/usr/servers/defaultServer/
