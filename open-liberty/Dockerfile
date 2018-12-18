@@ -12,6 +12,6 @@ ENV INSTALL_DIR /opt/wlp/
 ENV CONFIG_DIR /opt/wlp/usr/servers/defaultServer/
 ENV DEPLOYMENT_DIR /opt/wlp/usr/servers/defaultServer/dropins/
 
-COPY server.xml $CONFIG_DIR
+COPY server.xml ${CONFIG_DIR}configDropins/defaults/
 
 CMD ["/opt/wlp/bin/server", "run", "defaultServer"]
