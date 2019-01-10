@@ -18,6 +18,10 @@ The following environment variables can be used in the Dockerfile:
 
 == Tags
 
+For a comprehensive and updated list of image tags, see the https://hub.docker.com/r/sdaschner/open-liberty/tags[Docker Hub^] repository.
+
+Examples:
+
 - `sdaschner/open-liberty:javaee7-jdk8-b<build>`, Java EE 7 with JDK 8
-- `sdaschner/open-liberty:javaee8-jdk8-tracing-b<build>`, Java EE 8 with JDK 9 and MP OpenTracing, including the required Liberty Zipkin implementation
-- `sdaschner/open-liberty:javaee8-jdk9-b<build>`, Java EE 8 with JDK 9
+- `sdaschner/open-liberty:javaee8-jdk8-tracing-b<build>`, Java EE 8 with JDK 8 and MP OpenTracing, including the required Liberty Zipkin implementation
+- `sdaschner/open-liberty:javaee8-jdk11-b<build>`, Java EE 8 with JDK 11
