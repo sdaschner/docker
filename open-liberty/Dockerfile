@@ -1,8 +1,8 @@
 FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
 LABEL maintainer="Sebastian Daschner"
 
-ENV RELEASE 2019-02-07_0500
-ENV VERSION 19.0.0.2-cl190220190207-0300
+ENV RELEASE 2019-04-24_0430
+ENV VERSION 19.0.0.5-cl190520190424-0300
 
 RUN curl https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/nightly/${RELEASE}/openliberty-all-${VERSION}.zip -L -o openliberty.zip \
     && unzip openliberty.zip -d /opt \
