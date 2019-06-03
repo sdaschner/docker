@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <server description="OpenLiberty Server">
 
     <featureManager>
@@ -6,9 +5,5 @@
         <feature>mpOpenTracing-1.0</feature>
         <feature>usr:opentracingZipkin-0.30</feature>
     </featureManager>
-
-    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
-
-    <keyStore id="defaultKeyStore" password="Liberty"/>
 
 </server>
