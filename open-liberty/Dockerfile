@@ -1,8 +1,8 @@
 FROM adoptopenjdk/openjdk12-openj9:jdk-12.0.1_12_openj9-0.14.1-alpine-slim
 LABEL maintainer="Sebastian Daschner"
 
-ENV RELEASE 2019-06-02_1900
-ENV VERSION 19.0.0.6-cl190620190602-1900
+ENV RELEASE 2019-06-23_0300
+ENV VERSION 19.0.0.7-cl190720190623-0300
 
 RUN apk add curl
 
