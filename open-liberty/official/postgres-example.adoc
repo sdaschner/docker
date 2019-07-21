@@ -1,0 +1,72 @@
+== PostgreSQL on Liberty
+
+This is an example guide on how to configure a default PostgreSQL datasource.
+
+Create a `Dockerfile` in your project with the following contents.
+
+[source,Dockerfile]
+----
+FROM open-liberty:javaee8-java12
+
+ADD http://central.maven.org/maven2/org/postgresql/postgresql/9.4.1212/postgresql-9.4.1212.jar /opt/ol/wlp/lib/
+
+COPY src/main/liberty/postgres-driver.xml /config/configDropins/defaults/
+COPY src/main/liberty/server.xml /config/
+
+COPY target/my-application.war /config/dropins/
+----
+
+The `postgres-driver.xml` file might look as follows:
+
+[source,xml]
+----
+<server>
+  <jdbcDriver id="postgresql-driver" javax.sql.XADataSource="org.postgresql.xa.PGXADataSource"
+      javax.sql.ConnectionPoolDataSource="org.postgresql.ds.PGConnectionPoolDataSource"
+      libraryRef="postgresql-library"/>
+
+  <library id="postgresql-library">
+    <fileset id="PostgreSQLFileset" dir="/opt/ol/wlp/lib" includes="postgresql-9.4.1212.jar"/>
+  </library>
+</server>
+----
+
+The `server.xml` file configures the features and the default datasource for the application:
+
+[source,xml]
+----
+<server>
+
+    <featureManager>
+        <feature>javaee-8.0</feature>
+    </featureManager>
+
+    <dataSource id="DefaultDataSource"
+                jndiName="jdbc/coffee-shop-ds"
+                jdbcDriverRef="postgresql-driver"
+                type="javax.sql.ConnectionPoolDataSource"
+                transactional="true">
+
+        <properties serverName="coffee-shop-db"
+                    portNumber="5432"
+                    databaseName="postgres"
+                    user="postgres"
+                    password="postgres"/>
+    </dataSource>
+
+</server>
+----
+
+Your application then can simply use the default datasource in the `persistence.xml` and doesn't need to configure anything on top of it.
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="prod" transaction-type="JTA">
+        ...
+    </persistence-unit>
+</persistence>
+----

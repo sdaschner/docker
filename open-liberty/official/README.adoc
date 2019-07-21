@@ -1,3 +1,5 @@
+WARNING: Work in progress
+
 == Official open-liberty images
 
 A short guide on how to use the official https://hub.docker.com/_/open-liberty[open-liberty] Docker images.
@@ -42,3 +44,8 @@ The following directories exist for ease of use, to drop-in applications and con
 
 These directories are symlinked to the default server directory internally.
 Also see the https://openliberty.io/docs/ref/config/[documentation] on how to configure Open Liberty.
+
+
+=== Examples
+
+Have a look at the following example for https://github.com/sdaschner/docker/tree/master/open-liberty/official/postgres-example.adoc[configuring a Postgres database]:
