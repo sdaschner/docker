@@ -36,23 +36,16 @@ The `server.xml` file configures the features and the default datasource for the
 [source,xml]
 ----
 <server>
+  <featureManager>
+    <feature>javaee-8.0</feature>
+  </featureManager>
 
-    <featureManager>
-        <feature>javaee-8.0</feature>
-    </featureManager>
+  <dataSource id="DefaultDataSource" jndiName="jdbc/coffee-shop-ds" jdbcDriverRef="postgresql-driver"
+      type="javax.sql.ConnectionPoolDataSource" transactional="true">
 
-    <dataSource id="DefaultDataSource"
-                jndiName="jdbc/coffee-shop-ds"
-                jdbcDriverRef="postgresql-driver"
-                type="javax.sql.ConnectionPoolDataSource"
-                transactional="true">
-
-        <properties serverName="coffee-shop-db"
-                    portNumber="5432"
-                    databaseName="postgres"
-                    user="postgres"
-                    password="postgres"/>
-    </dataSource>
+    <properties serverName="coffee-shop-db" portNumber="5432" databaseName="postgres" user="postgres"
+        password="postgres"/>
+  </dataSource>
 
 </server>
 ----
@@ -64,9 +57,10 @@ Your application then can simply use the default datasource in the `persistence.
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-    <persistence-unit name="prod" transaction-type="JTA">
-        ...
-    </persistence-unit>
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="prod" transaction-type="JTA">
+      ...
+  </persistence-unit>
 </persistence>
 ----
