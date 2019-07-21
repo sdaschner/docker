@@ -1,0 +1,43 @@
+== Official open-liberty images
+
+A short guide on how to use the official https://hub.docker.com/_/open-liberty[open-liberty] Docker images.
+
+
+=== Deployment
+
+Create a `Dockerfile` in your project with the following contents.
+If you're building your application with Maven, you might change your WAR file location to `target/my-application.war`, or similar.
+
+[source,Dockerfile]
+----
+FROM open-liberty:javaee8-java12
+
+COPY my-application.war /config/dropins/
+----
+
+
+=== Configuration
+
+You can further configure your Liberty with a `server.xml` file that is added to the `/config/` location.
+
+[source,Dockerfile]
+----
+FROM open-liberty:javaee8-java12
+
+COPY src/main/liberty/server.xml /config/
+
+COPY target/mp-cp-example.war /config/dropins/
+----
+
+
+=== Directories
+
+The following directories exist for ease of use, to drop-in applications and configuration:
+
+- `/config/dropins/`: Auto-deployment directory to drop-in applications
+- `/config/`: Directory to drop-in configuration: `server.xml`, `server.env`, `bootstrap.properties`, `jvm.options`, 
+- `/config/configDropins/defaults/`: Directory to drop-in default configuration: `<any-config>.xml`, `jvm.options`, 
+- `/config/configDropins/overrides/`: Directory to drop-in override configuration: `<any-config>.xml`, `jvm.options`, 
+
+These directories are symlinked to the default server directory internally.
+Also see the https://openliberty.io/docs/ref/config/[documentation] on how to configure Open Liberty.

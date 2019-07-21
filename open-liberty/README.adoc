@@ -1,9 +1,11 @@
+NOTE: Have a look at this https://github.com/sdaschner/docker/tree/master/open-liberty/official/[guide] on how to use the official `open-liberty` images.
+
 == Usage
 
 Example Dockerfile:
 
 ----
-FROM sdaschner/open-liberty:javaee7-jdk8-b1
+FROM sdaschner/open-liberty:javaee8-jdk12-b3
 
 COPY my-application.war $DEPLOYMENT_DIR
 ----
@@ -24,4 +26,4 @@ Examples:
 
 - `sdaschner/open-liberty:javaee7-jdk8-b<build>`, Java EE 7 with JDK 8
 - `sdaschner/open-liberty:javaee8-jdk8-tracing-b<build>`, Java EE 8 with JDK 8 and MP OpenTracing, including the required Liberty Zipkin implementation
-- `sdaschner/open-liberty:javaee8-jdk11-b<build>`, Java EE 8 with JDK 11
+- `sdaschner/open-liberty:javaee8-jdk12-b<build>`, Java EE 8 with JDK 12
