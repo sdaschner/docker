@@ -1,4 +1,4 @@
-FROM sdaschner/open-liberty:javaee8-jdk12-b3
+FROM sdaschner/open-liberty:javaee8-jdk13-b1
 
 COPY postgresql-9.4.1212.jar ${INSTALL_DIR}lib
 
