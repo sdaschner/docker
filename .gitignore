@@ -3,3 +3,6 @@
 
 *.jar
 *.zip
+
+maven/.mvn-repository/
+maven/target/
